@@ -13,30 +13,39 @@
 
         <h4>Events</h4>
         <!-- Sync example -->
-        <p>Buttons pressed within 1 second: {{ buttonsSync }}</p>
+        <p>Synchronous bump happened within 1 second: {{ bumpSync }}</p>
 
         <!-- Counter example (received as event) -->
-        <p>Button press counter: {{ buttonPressCounter }}</p>
-
-        <!-- Blinking example (received as event) -->
-        <p>Device 0 is blinking: {{ blinking_0 }}</p>
-        <p>Device 1 is blinking: {{ blinking_1 }}</p>
+        <p>Bump counter: {{ bumpCounter }}</p>
         
         <hr>
         <h4>Variables</h4>
         <!-- Read variables example -->
-        <p>Button state (0): {{ buttonState_0 }} </p>
-        <button v-on:click="getButtonState(0)">Get button state (Device 0)</button>
+        <p>Variable a1 [G] (0): {{ a1_0 }} </p>
+        <p>Variable a2 [G] (0): {{ a2_0 }} </p>
+        <p>Variable b1 [G] (0): {{ b1_0 }} </p>
+        <p>Variable b2 [G] (0): {{ b2_0 }} </p>
+        <p>Variable c1 [G] (0): {{ c1_0 }} </p>
+        <p>Variable c2 [G] (0): {{ c2_0 }} </p>
+        <p>Variable t [ms] (0): {{ t_0 }} </p>
+        <button v-on:click="getVariables(0)">Get variables (Device 0)</button>
         <br>
-        <p>Button state (1): {{ buttonState_1 }} </p>
-        <button v-on:click="getButtonState(1)">Get button state (Device 1)</button>
+        <p>Variable a1 [G] (1): {{ a1_1 }} </p>
+        <p>Variable a2 [G] (1): {{ a2_1 }} </p>
+        <p>Variable b1 [G] (1): {{ b1_1 }} </p>
+        <p>Variable b2 [G] (1): {{ b2_1 }} </p>
+        <p>Variable c1 [G] (1): {{ c1_1 }} </p>
+        <p>Variable c2 [G] (1): {{ c2_1 }} </p>
+        <p>Variable t [ms] (1): {{ t_1 }} </p>
+        <button v-on:click="getVariables(1)">Get variables (Device 1)</button>
         
         <hr>
         <h4>Functions</h4>
         <!-- Call functions example  -->
-        <p>Blink red</p>
-        <button v-on:click="blinkRed(0)">Blink Red (Device 0)</button>
-        <button v-on:click="blinkRed(1)">Blink Red (Device 1)</button>
+        <p>Remote Bump</p>
+        <button v-on:click="remoteBump(0)">Bump (Device 0)</button>
+        <button v-on:click="remoteBump(1)">Bump (Device 1)</button>
+        <button v-on:click="remoteBump(2)">Bump (Device 0 & Device 1)</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
